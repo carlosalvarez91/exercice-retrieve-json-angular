@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-<ul *ngFor="let image of images">
+<ul *ngFor="let image of images | paginate: { itemsPerPage: 10, currentPage: p }">
   <li>{{image.title}}</li>
 </ul>
-
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
 <router-outlet></router-outlet>

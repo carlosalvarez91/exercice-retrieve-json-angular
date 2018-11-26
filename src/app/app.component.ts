@@ -12,7 +12,7 @@ export class AppComponent {
 
   
   images: Image[];
-
+  p:number = 1;
 
   constructor(
 
