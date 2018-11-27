@@ -14,6 +14,8 @@ export class AppComponent {
   images: Image[];
   p:number = 1;
 
+  asc: Boolean = false;
+
   constructor(
 
     private appService:AppService
@@ -34,6 +36,24 @@ export class AppComponent {
         this.images = images
       });
     }
+    compareTitleAsc(a,b){
+      if (a.title < b.title)
+        return -1 ;
+      if (a.title > b.title)
+        return 1;
+      return 0;
+      }
 
+    compareTitleDesc(a,b){
+        if (a.title < b.title)
+          return 1 ;
+        if (a.title > b.title)
+          return -1;
+        return 0;
+        }
 
+    sortByTitle(){
+        this.asc ? (this.images.sort(this.compareTitleAsc),  this.asc = false) : (this.images.sort(this.compareTitleDesc),this.asc = true);
+    }
+  
 }

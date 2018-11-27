@@ -1,5 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<button class="click-me" (click)="sortByTitle()">Sort by Title
+    <img *ngIf="asc" src="" alt="">
+    <img *ngIf="!asc" src="" alt="">
+</button> 
+
+
+
 <ul *ngFor="let image of images | paginate: { itemsPerPage: 10, currentPage: p }">
   <li>{{image.title}}</li>
 </ul>
