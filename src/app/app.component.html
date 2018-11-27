@@ -1,14 +1,32 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<span class="click-me" (click)="sortByTitle()">Sort by Title
-    <i *ngIf="asc" class="fas fa-caret-up"></i>
-    <i *ngIf="!asc" class="fas fa-caret-up"></i>
-</span> 
+<div class="filter-div">
 
-<div  *ngFor="let image of images | paginate: { itemsPerPage: 10, currentPage: p }">
-  <div >
-    <img src="{{image.thumbnailUrl}}">
-  </div>
-  <div>{{image.title}}</div>
+    <div class="filter-button"  (click)="sortByTitle()">Sort by Title
+        <img class="arrow"src="../../assets/icons/arrow_down.png" *ngIf="asc" >
+        <img class="arrow"src="../../assets/icons/arrow_up.png" *ngIf="!asc" >
+    </div> 
+
 </div>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<div class="container">
+  <div class="row">
+ 
+          <div  class="col-sm-6 col-md-4 col-lg-3"*ngFor="let image of images | paginate: { itemsPerPage: 10, currentPage: p }" >
+            <div class="col-card">
+                <img src="{{image.thumbnailUrl}}">
+            
+                <div>{{image.title.slice(0,15)}} ...</div>
+            </div>
+              
+          </div>
+
+  
+  </div>
+
+</div>
+
+<div class="pagination-container filter-div">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
 
