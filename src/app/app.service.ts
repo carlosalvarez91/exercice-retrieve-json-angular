@@ -11,7 +11,7 @@ export class AppService {
 
   images: Image[] = [];
 
-  private url:string = 'http://jsonplaceholder.typicode.com/photos';
+  private url:string = 'https://jsonplaceholder.typicode.com/photos';
   
   constructor(private http: HttpClient) { }
 
