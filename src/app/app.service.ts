@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
+
 export class AppService {
 
   images: Image[] = [];
@@ -14,8 +15,9 @@ export class AppService {
   
   constructor(private http: HttpClient) { }
 
-
   getImages(): Observable<Image[]> {
+
     return this.http.get<Image[]>(this.url)
+
   }
 }

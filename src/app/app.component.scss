@@ -12,11 +12,6 @@
         width: 150px;
         height: 52px;
     }
-    }
-.container{
-        /* padding-right: 15px; */
-    /* padding-left: 15px; */
-    /* margin-right: auto; */
 }
 
 .col-card{
@@ -26,16 +21,15 @@
  padding: 14px;
  background: #ffffff;
  margin: 5px 5px 20px 5px ;
-min-height: 200px; 
-border-radius: 3px;
-
+ min-height: 200px; 
+ border-radius: 3px;
+ // shadows
 -webkit-box-shadow: 0px 8px 8px -3px rgba(199,199,199,0.72);
 -moz-box-shadow: 0px 8px 8px -3px rgba(199,199,199,0.72);
 box-shadow: 0px 8px 8px -3px rgba(199,199,199,0.72);
-
-img{
+    img{
         width:100%;
-    }
+        }
 }
 
 .pagination-container{

@@ -1,28 +1,21 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="filter-div">
-
     <div class="filter-button"  (click)="sortByTitle()">Sort by Title
         <img class="arrow"src="../../assets/icons/arrow_down.png" *ngIf="asc" >
         <img class="arrow"src="../../assets/icons/arrow_up.png" *ngIf="!asc" >
     </div> 
-
 </div>
 
 <div class="container">
   <div class="row">
- 
-          <div  class="col-sm-6 col-md-4 col-lg-3"*ngFor="let image of images | paginate: { itemsPerPage: 10, currentPage: p }" >
-            <div class="col-card">
-                <img src="{{image.thumbnailUrl}}">
-            
-                <div>{{image.title.slice(0,15)}} ...</div>
-            </div>
-              
-          </div>
-
-  
+    <div  class="col-sm-6 col-md-4 col-lg-3"*ngFor="let image of images | paginate: { itemsPerPage: 10, currentPage: p }" >
+      <div class="col-card">
+          <img src="{{image.thumbnailUrl}}">
+      
+          <div>{{image.title.slice(0,15)}} ...</div>
+      </div>
+        
+    </div>
   </div>
-
 </div>
 
 <div class="pagination-container filter-div">
