@@ -1,13 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<button class="click-me" (click)="sortByTitle()">Sort by Title
-    <img *ngIf="asc" src="" alt="">
-    <img *ngIf="!asc" src="" alt="">
-</button> 
+<span class="click-me" (click)="sortByTitle()">Sort by Title
+    <i *ngIf="asc" class="fas fa-caret-up"></i>
+    <i *ngIf="!asc" class="fas fa-caret-up"></i>
+</span> 
 
-
-
-<ul *ngFor="let image of images | paginate: { itemsPerPage: 10, currentPage: p }">
-  <li>{{image.title}}</li>
-</ul>
+<div  *ngFor="let image of images | paginate: { itemsPerPage: 10, currentPage: p }">
+  <div >
+    <img src="{{image.thumbnailUrl}}">
+  </div>
+  <div>{{image.title}}</div>
+</div>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
-<router-outlet></router-outlet>
+
